@@ -1,5 +1,7 @@
 # Maho-Mon 🐱‍🔮
 
+[English](README.md) | [简体中文](README_zh.md) | [日本語](README_ja.md)
+
 <p align="center">
   <img src="public/icon.png" width="128" height="128" alt="Maho-Mon Icon">
 </p>
