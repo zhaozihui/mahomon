@@ -73,23 +73,6 @@ Kindle版は電子インク画面向けの最小限UIを提供：
 - 電子インク画面に最適化された白黒デザイン
 - アニメーションやグラデーションなし
 - 5秒間隔で更新
-- `/k.html` でアクセス
-
-```
-┌─────────────────────────────────────────────┐
-│  Maho-Mon - Claude Monitor                  │
-├─────────────────────┬───────────────────────┤
-│  Session            │  Total                │
-│  - Project/Model    │  - Total Tokens       │
-│  - Tokens In/Out    │  - Input/Output       │
-│  - Context/Cache    │  - Cost/Sessions      │
-│  - Files/Branch     ├───────────────────────┤
-│                     │  System               │
-│                     │  - CPU/Memory bars    │
-└─────────────────────┴───────────────────────┤
-│  Network: ↑ XX KB/s  ↓ XX KB/s              │
-└─────────────────────────────────────────────┘
-```
 
 ## API エンドポイント
 

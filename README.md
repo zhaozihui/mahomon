@@ -73,23 +73,6 @@ The Kindle version provides a minimal, e-ink friendly interface:
 - Black & white design optimized for e-ink displays
 - No animations or gradients
 - 5-second refresh interval
-- Access via `/k.html` or run `npm run dev:kindle`
-
-```
-┌─────────────────────────────────────────────┐
-│  Maho-Mon - Claude Monitor                  │
-├─────────────────────┬───────────────────────┤
-│  Session            │  Total                │
-│  - Project/Model    │  - Total Tokens       │
-│  - Tokens In/Out    │  - Input/Output       │
-│  - Context/Cache    │  - Cost/Sessions      │
-│  - Files/Branch     ├───────────────────────┤
-│                     │  System               │
-│                     │  - CPU/Memory bars    │
-└─────────────────────┴───────────────────────┤
-│  Network: ↑ XX KB/s  ↓ XX KB/s              │
-└─────────────────────────────────────────────┘
-```
 
 ## API Endpoints
 
