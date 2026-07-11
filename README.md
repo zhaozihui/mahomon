@@ -137,23 +137,17 @@ Reads Claude Code usage from:
 
 ## Screenshots
 
-**Main Version**
-```
-┌──────────────────────────────────────────────┐
-│  Maho-Mon | Magic Monitor Girl               │
-├──────────────────────┬───────────────────────┤
-│                      │  Stats Panel          │
-│  Session Bubble      │  - Total tokens       │
-│  - Current session   │  - Input/Output       │
-│  - Messages          │  - Cost               │
-│  - Tools used        │  - Model name         │
-│                      ├───────────────────────┤
-│  System Monitor      │                       │
-│  - CPU usage         │    Live2D Character   │
-│  - Memory            │                       │
-│                      │  [Feed] [Play] [Rest] │
-└──────────────────────┴───────────────────────┘
-```
+### Mobile Version
+
+<p align="center">
+  <img src="screenshot_m.jpg" width="300" alt="Mobile Version Screenshot">
+</p>
+
+### Kindle Version
+
+<p align="center">
+  <img src="screenshot_k.png" width="400" alt="Kindle Version Screenshot">
+</p>
 
 ## License
 
