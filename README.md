@@ -1,109 +1,130 @@
-# Claude Monitor Web
+# Maho-Mon 🐱‍🔮
 
-Node.js + React 网页版本的 Claude Monitor 桌面宠物应用。
+<p align="center">
+  <img src="public/icon.png" width="128" height="128" alt="Maho-Mon Icon">
+</p>
 
-## 功能
+A web-based desktop pet app that monitors Claude Code token usage in real-time — featuring a Live2D character, gamified stats, and system monitoring.
 
-- 实时监控 Claude Code token 使用
-- Live2D 宠物显示
-- 宠物养成系统（HP/快乐值/饱食度/经验值/等级）
-- 互动功能（喂食/玩耍/休息）
-- 系统监控（CPU/内存/网络）
-- 多语言支持
+## Features
 
-## 技术栈
+- **Live2D Character** — Animated pet with expressions and actions
+- **Real-time Monitoring** — Token count, input/output, cost, model name, context usage
+- **Pet System** — HP, mood, hunger, XP, and levels driven by your coding activity
+- **Interactive** — Feed, play, and rest buttons trigger animations
+- **System Monitor** — CPU, memory usage display
+- **Session Tracking** — Current session stats, modified files, git branch
 
-- **前端**: React + TypeScript + Vite + Tailwind CSS + Zustand
-- **后端**: Node.js + Express
-- **Live2D**: pixi-live2d-display + PixiJS
-- **系统监控**: systeminformation
+## Tech Stack
 
-## 快速开始
+- **Frontend**: React 19 + TypeScript + Vite + Tailwind CSS 4 + Zustand
+- **Backend**: Node.js + Express
+- **Live2D**: pixi-live2d-display + PixiJS 7
 
-### 安装依赖
+## Quick Start
+
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Install Dependencies
 
 ```bash
-# 安装前端依赖
+# Install frontend dependencies
 npm install
 
-# 安装后端依赖
+# Install backend dependencies
 cd server && npm install && cd ..
 ```
 
-### 运行
+### Run
 
-**方式一：分别启动前端和后端**
+**Option 1: Start frontend and backend separately**
 
 ```bash
-# 终端 1 - 启动后端
+# Terminal 1 - Start backend server
 cd server && npm run dev
 
-# 终端 2 - 启动前端
+# Terminal 2 - Start frontend dev server
 npm run dev
 ```
 
-**方式二：同时启动**
+**Option 2: Start both together**
 
 ```bash
 npm run dev:all
 ```
 
-### 访问
+### Access
 
-- 前端: http://localhost:5173
-- 后端 API: http://localhost:3001/api
+- Frontend: http://localhost:5173
+- Backend API: http://localhost:3001
 
-## API 接口
+## API Endpoints
 
-### GET /api/usage
-获取 Claude 使用数据
+| Endpoint | Description |
+|----------|-------------|
+| `GET /api/usage` | Get Claude usage data |
+| `GET /api/pet` | Get pet status |
+| `POST /api/pet` | Update pet status |
+| `POST /api/pet/interact` | Perform interaction (feed/play/rest) |
+| `GET /api/system` | Get system monitoring data |
+| `GET /api/health` | Health check |
 
-### GET /api/pet
-获取宠物状态
-
-### POST /api/pet
-更新宠物状态
-
-### POST /api/pet/interact
-执行互动（feed/play/rest）
-
-### GET /api/system
-获取系统监控数据
-
-## 项目结构
+## Project Structure
 
 ```
-claude-monitor-web/
-├── src/                    # 前端源码
-│   ├── components/         # React 组件
+mahomon/
+├── src/                    # Frontend source
+│   ├── components/         # React components
+│   │   ├── Live2DCanvas.tsx
+│   │   ├── SessionBubble.tsx
+│   │   ├── StatsPanel.tsx
+│   │   └── SystemMonitor.tsx
 │   ├── stores/             # Zustand stores
-│   ├── lib/                # 核心逻辑
-│   └── types/              # TypeScript 类型
-├── server/                 # 后端源码
-│   ├── routes/             # API 路由
-│   └── lib/                # 后端逻辑
-└── public/                 # 静态资源
-    └── assets/live2d/      # Live2D 模型
+│   ├── lib/                # Core logic
+│   └── types/              # TypeScript types
+├── server/                 # Backend source
+│   ├── routes/             # API routes
+│   ├── lib/                # Backend logic
+│   │   ├── claudeMonitor.ts
+│   │   └── petStorage.ts
+│   └── types/
+└── public/
+    └── assets/live2d/      # Live2D model files
 ```
 
-## 从 Python 版本迁移
+## Data Sources
 
-此项目是从 Python + PySide6 版本迁移而来：
+Reads Claude Code usage from:
 
-| Python 文件 | Node.js 对应 |
-|-------------|--------------|
-| `src/core/monitor.py` | `server/lib/claudeMonitor.ts` |
-| `src/core/pet.py` | `src/lib/pet.ts` |
-| `src/data/pet_storage.py` | `server/lib/petStorage.ts` |
-| `src/ui/live2d_window.py` | `src/components/Live2DCanvas.tsx` 等 |
-| `src/utils/config.py` | `src/lib/config.ts` |
+- `~/.claude/stats-cache.json` — Cumulative token statistics
+- `~/.claude/sessions/*.json` — Session activity logs
+- `~/.claude/projects/*/*.jsonl` — Project session data
 
-## 数据文件
+## Pet Data
 
-- 宠物数据: `~/.claude/pet_data.json`
-- 使用统计: `~/.claude/stats-cache.json`
-- 会话数据: `~/.claude/sessions/*.json`
-- 项目会话: `~/.claude/projects/*/*.jsonl`
+- Pet state: `~/.claude/pet_data.json`
+
+## Screenshots
+
+```
+┌──────────────────────────────────────────────┐
+│  Maho-Mon | Magic Monitor Girl               │
+├──────────────────────┬───────────────────────┤
+│                      │  Stats Panel          │
+│  Session Bubble      │  - Total tokens       │
+│  - Current session   │  - Input/Output       │
+│  - Messages          │  - Cost               │
+│  - Tools used        │  - Model name         │
+│                      ├───────────────────────┤
+│  System Monitor      │                       │
+│  - CPU usage         │    Live2D Character   │
+│  - Memory            │                       │
+│                      │  [Feed] [Play] [Rest] │
+└──────────────────────┴───────────────────────┘
+```
 
 ## License
 
