@@ -1,0 +1,35 @@
+# Development files
+.claude/
+*.log
+node_modules/
+
+# Server node_modules (too large)
+server/node_modules/
+
+# Build outputs (we need dist for running)
+# server/dist/
+
+# Screenshots (not needed in package)
+screenshot_*.png
+screenshot_*.jpg
+
+# TypeScript configs not needed for runtime
+tsconfig.json
+tsconfig.app.json
+tsconfig.node.json
+
+# Source files (keep only what's needed)
+src/
+server/lib/*.ts
+server/types/*.ts
+server/tsconfig.json
+
+# Vite config
+vite.config.ts
+postcss.config.js
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo

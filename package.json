@@ -1,6 +1,6 @@
 {
   "name": "maho-mon",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A web-based monitoring app for Claude Code token usage with Live2D character",
   "keywords": [
     "claude",
@@ -22,7 +22,7 @@
   "homepage": "https://github.com/zhaozihui/mahomon#readme",
   "type": "module",
   "bin": {
-    "maho-mon": "./bin/maho-mon.cjs"
+    "mahomon": "bin/maho-mon.js"
   },
   "files": [
     "bin",
@@ -40,7 +40,7 @@
     "dev": "vite",
     "dev:server": "cd server && npm run dev",
     "dev:all": "npm run dev:server & npm run dev",
-    "start": "node bin/maho-mon.cjs",
+    "start": "node bin/maho-mon.js",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
