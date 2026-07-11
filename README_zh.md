@@ -24,37 +24,33 @@
 
 ## 快速开始
 
-### 环境要求
-
-- Node.js 18+
-- npm
-
-### 安装依赖
+### 通过 npm 安装（推荐）
 
 ```bash
-# 安装前端依赖
+# 全局安装
+npm install -g maho-mon
+
+# 启动
+maho-mon
+```
+
+然后访问：
+- 主版本: http://localhost:5173
+- Kindle: http://localhost:5173/k.html
+
+### 或从源码运行
+
+**环境要求**: Node.js 18+
+
+```bash
+# 克隆并安装
+git clone https://github.com/zhaozihui/mahomon.git
+cd mahomon
 npm install
-
-# 安装后端依赖
 cd server && npm install && cd ..
-```
 
-### 运行
-
-**方式一：分别启动前端和后端**
-
-```bash
-# 终端 1 - 启动后端服务
-cd server && npm run dev
-
-# 终端 2 - 启动前端开发服务器
-npm run dev
-```
-
-**方式二：同时启动**
-
-```bash
-npm run dev:all
+# 启动
+npm start
 ```
 
 ### 访问地址

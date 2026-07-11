@@ -24,37 +24,33 @@ A web-based monitoring app for Claude Code token usage in real-time — featurin
 
 ## Quick Start
 
-### Prerequisites
-
-- Node.js 18+
-- npm
-
-### Install Dependencies
+### Install via npm (Recommended)
 
 ```bash
-# Install frontend dependencies
+# Install globally
+npm install -g maho-mon
+
+# Start
+maho-mon
+```
+
+Then open:
+- Main: http://localhost:5173
+- Kindle: http://localhost:5173/k.html
+
+### Or Run from Source
+
+**Prerequisites**: Node.js 18+
+
+```bash
+# Clone and install
+git clone https://github.com/zhaozihui/mahomon.git
+cd mahomon
 npm install
-
-# Install backend dependencies
 cd server && npm install && cd ..
-```
 
-### Run
-
-**Option 1: Start frontend and backend separately**
-
-```bash
-# Terminal 1 - Start backend server
-cd server && npm run dev
-
-# Terminal 2 - Start frontend dev server
-npm run dev
-```
-
-**Option 2: Start both together**
-
-```bash
-npm run dev:all
+# Start
+npm start
 ```
 
 ### Access
