@@ -24,22 +24,6 @@
 
 ## 快速开始
 
-### 通过 npm 安装（推荐）
-
-```bash
-# 全局安装
-npm install -g maho-mon
-
-# 启动
-maho-mon
-```
-
-然后访问：
-- 主版本: http://localhost:5173
-- Kindle: http://localhost:5173/k.html
-
-### 或从源码运行
-
 **环境要求**: Node.js 18+
 
 ```bash
@@ -49,8 +33,11 @@ cd mahomon
 npm install
 cd server && npm install && cd ..
 
-# 启动
-npm start
+# 启动后端
+cd server && npm run dev
+
+# 启动前端（另一个终端）
+npm run dev
 ```
 
 ### 访问地址

@@ -24,22 +24,6 @@ Claude Codeのトークン使用量をリアルタイムで監視するWebベー
 
 ## クイックスタート
 
-### npmでインストール（推奨）
-
-```bash
-# グローバルインストール
-npm install -g maho-mon
-
-# 起動
-maho-mon
-```
-
-アクセス：
-- メイン: http://localhost:5173
-- Kindle: http://localhost:5173/k.html
-
-### またはソースから実行
-
 **前提条件**: Node.js 18+
 
 ```bash
@@ -49,8 +33,11 @@ cd mahomon
 npm install
 cd server && npm install && cd ..
 
-# 起動
-npm start
+# バックエンド起動
+cd server && npm run dev
+
+# フロントエンド起動（別ターミナル）
+npm run dev
 ```
 
 ### アクセス

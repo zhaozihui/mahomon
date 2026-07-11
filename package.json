@@ -1,50 +1,15 @@
 {
   "name": "maho-mon",
-  "version": "0.1.2",
-  "description": "A web-based monitoring app for Claude Code token usage with Live2D character",
-  "keywords": [
-    "claude",
-    "claude-code",
-    "monitor",
-    "live2d",
-    "desktop-pet",
-    "token-usage"
-  ],
-  "author": "zhaozihui",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zhaozihui/mahomon.git"
-  },
-  "bugs": {
-    "url": "https://github.com/zhaozihui/mahomon/issues"
-  },
-  "homepage": "https://github.com/zhaozihui/mahomon#readme",
+  "private": true,
+  "version": "0.1.0",
   "type": "module",
-  "bin": {
-    "mahomon": "bin/maho-mon.js"
-  },
-  "files": [
-    "bin",
-    "server",
-    "src",
-    "public",
-    "index.html",
-    "vite.config.ts",
-    "tsconfig.json",
-    "tsconfig.app.json",
-    "tsconfig.node.json",
-    "postcss.config.js"
-  ],
   "scripts": {
     "dev": "vite",
     "dev:server": "cd server && npm run dev",
     "dev:all": "npm run dev:server & npm run dev",
-    "start": "node bin/maho-mon.js",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview",
-    "prepublishOnly": "npm install && cd server && npm install"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.3.2",
@@ -57,8 +22,7 @@
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-i18next": "^17.0.9",
-    "zustand": "^5.0.14",
-    "tsx": "^4.20.3"
+    "zustand": "^5.0.14"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
@@ -66,15 +30,12 @@
     "@types/node": "^24.13.2",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.3",
+    "@vitejs/plugin-react": "^4.0.0",
     "autoprefixer": "^10.5.2",
     "oxlint": "^1.71.0",
     "postcss": "^8.5.16",
     "tailwindcss": "^4.3.2",
     "typescript": "~6.0.2",
-    "vite": "^8.1.1"
-  },
-  "engines": {
-    "node": ">=18.0.0"
+    "vite": "^7.0.0"
   }
 }
