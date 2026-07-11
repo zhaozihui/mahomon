@@ -1,19 +1,20 @@
 # Maho-Mon 🐱‍🔮
 
+[English](README.md) | [简体中文](README_zh.md) | [日本語](README_ja.md)
+
 <p align="center">
   <img src="public/icon.png" width="128" height="128" alt="Maho-Mon Icon">
 </p>
 
-Claude Codeのトークン使用量をリアルタイムで監視するWebベースのデスクトップペットアプリ — Live2Dキャラクター、ゲーミフィケーション機能、システム監視を搭載。
+Claude Codeのトークン使用量をリアルタイムで監視するWebベースのアプリ — Live2Dキャラクターとシステム監視を搭載。
 
 ## 機能
 
-- **Live2Dキャラクター** — 表情とアクションを持つアニメーションペット
+- **Live2Dキャラクター** — 作業强度に反応する表情を持つアニメーションキャラ
 - **リアルタイム監視** — トークン数、入力/出力、コスト、モデル名、コンテキスト使用率
-- **ペットシステム** — HP、気分、空腹度、経験値、レベルがコーディング活動に連動
-- **インタラクション** — 餌やり、遊び、休憩ボタンでアニメーション発動
-- **システム監視** — CPU、メモリ使用率表示
-- **セッション追跡** — 現在のセッション統計、編集ファイル、Git ブランチ
+- **セッション追跡** — 現在のセッション統計、編集ファイル、Git ブランチ、使用ツール
+- **システム監視** — CPU、メモリ、GPU、ネットワーク速度表示
+- **Kindle版** — 電子インク画面向けの最小限UI
 
 ## 技術スタック
 
@@ -58,8 +59,37 @@ npm run dev:all
 
 ### アクセス
 
-- フロントエンド: http://localhost:5173
-- バックエンド API: http://localhost:3001
+| バージョン | URL | 説明 |
+|-----------|-----|------|
+| メイン | http://localhost:5173 | Live2D付きフルUI |
+| Kindle | http://localhost:5173/k.html | 電子インク向け最小UI |
+
+バックエンド API: http://localhost:3001
+
+## Kindle版
+
+Kindle版は電子インク画面向けの最小限UIを提供：
+
+- 電子インク画面に最適化された白黒デザイン
+- アニメーションやグラデーションなし
+- 5秒間隔で更新
+- `/k.html` でアクセス
+
+```
+┌─────────────────────────────────────────────┐
+│  Maho-Mon - Claude Monitor                  │
+├─────────────────────┬───────────────────────┤
+│  Session            │  Total                │
+│  - Project/Model    │  - Total Tokens       │
+│  - Tokens In/Out    │  - Input/Output       │
+│  - Context/Cache    │  - Cost/Sessions      │
+│  - Files/Branch     ├───────────────────────┤
+│                     │  System               │
+│                     │  - CPU/Memory bars    │
+└─────────────────────┴───────────────────────┤
+│  Network: ↑ XX KB/s  ↓ XX KB/s              │
+└─────────────────────────────────────────────┘
+```
 
 ## API エンドポイント
 
@@ -82,6 +112,7 @@ mahomon/
 │   │   ├── SessionBubble.tsx
 │   │   ├── StatsPanel.tsx
 │   │   └── SystemMonitor.tsx
+│   ├── pages/kindle/       # Kindle版
 │   ├── stores/             # Zustand stores
 │   ├── lib/                # コアロジック
 │   └── types/              # TypeScript 型定義
@@ -92,6 +123,7 @@ mahomon/
 │   │   └── petStorage.ts
 │   └── types/
 └── public/
+    ├── k.html              # Kindle HTML（独立）
     └── assets/live2d/      # Live2D モデルファイル
 ```
 
@@ -103,12 +135,9 @@ mahomon/
 - `~/.claude/sessions/*.json` — セッション活動ログ
 - `~/.claude/projects/*/*.jsonl` — プロジェクトセッションデータ
 
-## ペットデータ
-
-- ペットステータス: `~/.claude/pet_data.json`
-
 ## スクリーンショット
 
+**メインバージョン**
 ```
 ┌──────────────────────────────────────────────┐
 │  Maho-Mon | Magic Monitor Girl               │
